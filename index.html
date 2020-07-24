@@ -35,26 +35,18 @@ body {
 </P>
 
 
-<script> 
-  // JavaScript code to pick  
-  // a random color from array 
-  function getRandomColor() {
-    let colors = [ 
-      '#ff0000', '#00ff00', '#0000ff', '#ff3333', '#ffff00', '#ff6600' 
-    ]; 
-    let random_color = colors[Math.floor(Math.random() * colors.length)]; 
-    return random_color
+<script>
+  let colors = ['#ff0000', '#00ff00', '#0000ff', '#ff3333', '#ffff00', '#ff6600'];
+
+  function setRandomColor(element) {
+    element.style.color = colors[Math.floor(Math.random() * colors.length)];
   }
 
-  function pickColor() { 
-    // Array containing colors 
-    // selecting random color 
-    let elements = document.getElementsByClassName('vsrato'); 
-    Array.from(elements).forEach((element) => {
-      element.style.color = getRandomColor();
-    });
-  }  
+  function setColors() {
+    Array.from(document.getElementsByClassName('vsrato')).forEach(setRandomColor);
+  }
 
-  window.onload = pickColor;
-</script> 
+  window.onload = setColors;
+</script>
+
 </body>
