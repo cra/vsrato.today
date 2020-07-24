@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Узнай правду о сегодня</title>
+<style>
+body {
+	background-color: black;
+	color: white;
+}
+.message {
+	text-align: center;
+	margin-top: 100px;
+	font-size: 48pt;
+}
+.vsrato {
+	font-weight: 700;
+	color: green;
+}
+.yes {
+	text-decoration: underline;
+}
+</style>
+</head>
+<body>
+<P class="message"><span class="vsrato">Всрато</span> ли сегодня? <span class="yes">АБСОЛЮТНО</span></p>
+<P class="message">[Is today <span class="vsrato">vsrato</span>? <span class="yes">YES</span>]</p>
+<P class="message">
+<span class="vsrato">V</span>ictor
+<span class="vsrato">S</span>iérra
+<span class="vsrato">R</span>ómeo
+<span class="vsrato">Á</span>lfa
+<span class="vsrato">T</span>ángo
+<span class="vsrato">Ó</span>scar
+</P>
+
+
+<script> 
+  // JavaScript code to pick  
+  // a random color from array 
+  function getRandomColor() {
+    let colors = [ 
+      '#ff0000', '#00ff00', '#0000ff', '#ff3333', '#ffff00', '#ff6600' 
+    ]; 
+    let random_color = colors[Math.floor(Math.random() * colors.length)]; 
+    return random_color
+  }
+
+  function pickColor() { 
+    // Array containing colors 
+    // selecting random color 
+    let elements = document.getElementsByClassName('vsrato'); 
+    Array.from(elements).forEach((element) => {
+      element.style.color = getRandomColor();
+    });
+  }  
+
+  window.onload = pickColor;
+</script> 
+</body>

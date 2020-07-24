@@ -1,0 +1,18 @@
+server {
+    listen 80;
+
+    server_name vsrato.today www.vsrato.today;
+
+    access_log  /var/log/nginx/vsrato.today-access.log;
+    error_log  /var/log/nginx/vsrato.today-error.log;
+
+    location / {
+        ssi on;
+        set $server_type TZ;
+
+        root /var/www/vsrato.today;
+        index index.html;
+    }
+
+}
+
